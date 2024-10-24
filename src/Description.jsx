@@ -1,10 +1,14 @@
 // @ts-check
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DogImage from './DogImage';
 
 export const Description = () => {
-  const [ dogUrl, setDogUrl ] = useState("https://dog.ceo/api/breeds/image/random");
+  const [ dogUrl, setDogUrl ] = useState('');
+
+  useEffect(() => {
+    changeImage();
+  }, []);
 
   function changeImage() {
     fetch("https://dog.ceo/api/breeds/image/random")
