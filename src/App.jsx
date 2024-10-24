@@ -1,6 +1,9 @@
 // DO NOT DELETE
 
 import './App.css'
+import Header from './Header'
+import Description from './Description'
+import DogListContainer from './DogListContainer'
 
 /**
  * @type {() => JSX.Element}
@@ -8,7 +11,13 @@ import './App.css'
 export const App = () => {
   return (
     <div>
-      <h2>Hello, world!</h2>
+      <div className="container">
+        <Header />
+        <Description />
+      </div>
+      <div className="container">
+        <DogListContainer />
+      </div>
     </div>
   )
 }
