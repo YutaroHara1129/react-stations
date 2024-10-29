@@ -1,6 +1,7 @@
 // @ts-check
 
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * @param {{ breeds: string[], onBreedChange: (breed: string) => void }} props
@@ -23,6 +24,11 @@ export const BreedsSelect = ({breeds, onBreedChange}) => {
     <button className="button-main" onClick={() => onBreedChange(selectedBreed)}>表示</button>
    </>
   )
+}
+
+BreedsSelect.propTypes = {
+  breeds: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onBreedChange: PropTypes.func.isRequired,
 }
 
 export default BreedsSelect

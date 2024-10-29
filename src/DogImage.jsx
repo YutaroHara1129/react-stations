@@ -1,4 +1,5 @@
 // @ts-check
+import PropTypes from 'prop-types';
 
 /**
  * @param {{ imageUrl: string }} props
@@ -10,5 +11,9 @@ export const DogImage = ({imageUrl}) => {
    </>
   )
 }
+
+DogImage.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+};
 
 export default DogImage
