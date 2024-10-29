@@ -13,7 +13,7 @@ export const DogListContainer = () => {
       .then((data) => {
         setBreeds(data["message"]);
       })
-  },[breeds])
+  },[])
 
   /**
    * 
