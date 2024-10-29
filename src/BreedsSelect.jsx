@@ -1,13 +1,20 @@
 // @ts-check
 
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
 /**
  * @param {{ breeds: string[], onBreedChange: (breed: string) => void }} props
  */
 export const BreedsSelect = ({breeds, onBreedChange}) => {
-  const [ selectedBreed, setSelectedBreed ] = useState("");
+  const [ selectedBreed, setSelectedBreed ] = useState('');
+
+  useEffect(() => {
+    if (breeds.length > 0) {
+      setSelectedBreed(breeds[0]);
+    }
+  }, [breeds]);
+
   /**
    * @param {React.ChangeEvent<HTMLSelectElement>} e
    */
